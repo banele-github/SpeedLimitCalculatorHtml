@@ -1,0 +1,71 @@
+<html> 
+
+<head>
+
+<title> Speed Limit </title>
+<style>
+body
+{
+text-align: center;
+
+}
+</style>
+<script>
+
+function CheckFine()
+{
+var userInput= document.getElementById("userSpeed").value;
+
+var userNumber = parseFloat(userInput);
+
+var speedCalcs;
+if (userNumber>=60 && userNumber<=80)
+	{
+	speedCalcs = "R100";
+	}
+else if (userNumber>=81 && userNumber<=100)
+	{
+	speedCalcs = "R200";
+	}
+else if (userNumber>=101 && userNumber<=120)
+	{
+	speedCalcs = "R250";
+	}
+else if (userNumber>=121 && userNumber<=140)
+	{
+	speedCalcs = "R500";
+	}
+else if (userNumber>=141 && userNumber<=160)
+	{
+	speedCalcs = "R1000";
+	}
+else if (userNumber>160 )
+	{
+	speedCalcs = "JAIL";
+	}
+else
+{
+	speedCalcs = "No Fine";
+}
+document.getElementById("CalcFine").innerHTML = "Fine: " + speedCalcs;
+}
+</script>
+
+</head>
+
+
+<body>
+
+<h2> Finer Checker </h2>
+
+<label for="userSpeed'">Enter Speed:</label>
+<input type="text" id="userSpeed">
+
+<br>
+<br>
+
+<button onclick="CheckFine()">Check</button>
+<p id="CalcFine"> </p>
+
+</body>
+</html>
